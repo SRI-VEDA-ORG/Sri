@@ -3,7 +3,7 @@ self.addEventListener('install', (e) => {
     caches.open('sri-marketing-store').then((cache) => cache.addAll([
       './index.html',
       './manifest.json',
-      'https://sri-veda-org.github.io/Sri/LOGO-CIRCLE.png'
+      'https://sri-veda-org.github.io/Sri/logo-no-cicle.jpeg'
     ])),
   );
 });
