@@ -44,14 +44,20 @@ body{background-color:var(--bg);color:var(--text);font-size:14px;line-height:1.5
 .input-field:focus{border-color:var(--primary);box-shadow:0 0 0 4px rgba(122,31,61,0.1);}
 .label{font-size:12px;font-weight:800;color:var(--text-light);text-transform:uppercase;letter-spacing:1px;}
 
-/* CM005 - Login Screen */
+/* CM005 - PWA Install Prompt Screen */
+#install-screen{position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(89,19,42,0.9);backdrop-filter:blur(8px);z-index:99999;display:none;flex-direction:column;align-items:center;justify-content:center;padding:20px;color:#FFF;}
+.install-card{background:var(--card);color:var(--text);padding:40px 30px;border-radius:24px;width:100%;max-width:360px;box-shadow:0 20px 40px rgba(0,0,0,0.3);text-align:center;animation:slideUpInstall 0.5s cubic-bezier(0.175,0.885,0.32,1.275);}
+@keyframes slideUpInstall{from{opacity:0;transform:translateY(50px) scale(0.9);}to{opacity:1;transform:translateY(0) scale(1);}}
+.install-icon{width:100px;height:100px;border-radius:25%;box-shadow:0 10px 20px rgba(122,31,61,0.2);margin-bottom:20px;}
+
+/* CM006 - Login Screen */
 #login-screen{height:100vh;width:100vw;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;background:linear-gradient(135deg,var(--bg) 0%,var(--secondary) 100%);}
 .login-card{background:var(--card);padding:40px 30px;border-radius:20px;width:100%;max-width:380px;box-shadow:var(--shadow-lg);border:1px solid #FFF;}
 .logo-container{display:flex;justify-content:center;margin-bottom:20px;}
 .logo-img{width:100px;height:100px;border-radius:50%;border:4px solid var(--primary);padding:4px;box-shadow:var(--shadow-md);background:#FFF;}
 .login-hint{font-size:12px;color:var(--primary-dark);text-align:center;margin-top:25px;padding:12px;background:var(--secondary);border-radius:8px;font-weight:600;}
 
-/* CM006 - App Header (AppBar) */
+/* CM007 - App Header (AppBar) */
 #dashboard{display:none;min-height:100vh;}
 .app-header{background:linear-gradient(90deg,var(--primary-dark),var(--primary));color:#FFF;height:65px;display:flex;align-items:center;justify-content:space-between;padding:0 15px;position:sticky;top:0;z-index:100;box-shadow:var(--shadow-md);}
 .header-left{display:flex;align-items:center;gap:15px;}
@@ -61,7 +67,7 @@ body{background-color:var(--bg);color:var(--text);font-size:14px;line-height:1.5
 .header-title{font-size:20px;font-weight:800;letter-spacing:0.5px;}
 .header-profile{width:40px;height:40px;border-radius:50%;border:2px solid var(--gold);object-fit:cover;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.2);}
 
-/* CM007 - Sidebar Navigation (Drawer) */
+/* CM008 - Sidebar Navigation (Drawer) */
 .sidebar-overlay{position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(89,19,42,0.6);backdrop-filter:blur(3px);z-index:1000;opacity:0;pointer-events:none;transition:opacity 0.3s ease;}
 .sidebar-overlay.active{opacity:1;pointer-events:all;}
 .sidebar{position:fixed;top:0;left:-320px;width:300px;height:100vh;background:var(--card);z-index:1001;box-shadow:4px 0 24px rgba(0,0,0,0.15);transition:left 0.3s cubic-bezier(0.4,0,0.2,1);display:flex;flex-direction:column;}
@@ -78,21 +84,21 @@ body{background-color:var(--bg);color:var(--text);font-size:14px;line-height:1.5
 .menu-item.active svg{fill:var(--primary);}
 .menu-divider{height:1px;background:var(--border);margin:12px 25px;}
 
-/* CM008 - Content Views & Typography */
+/* CM009 - Content Views & Typography */
 .main-content{padding:20px;padding-bottom:40px;}
 .view-section{display:none;animation:fadeInUp 0.4s cubic-bezier(0.175,0.885,0.32,1.275);}
 .view-section.active{display:block;}
 @keyframes fadeInUp{from{opacity:0;transform:translateY(15px);}to{opacity:1;transform:translateY(0);}}
 .section-heading{font-size:22px;font-weight:900;color:var(--primary-dark);margin-bottom:18px;display:flex;align-items:center;gap:10px;}
 
-/* CM009 - Cards (Professional Look) */
+/* CM010 - Cards (Professional Look) */
 .pro-card{background:var(--card);border-radius:16px;padding:20px;margin-bottom:20px;box-shadow:var(--shadow-md);border:1px solid #FFF;transition:transform 0.2s;}
 .status-pill{display:inline-block;padding:5px 12px;border-radius:20px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1px;}
 .status-active{background:rgba(46,125,50,0.15);color:var(--success);}
 .status-maintenance{background:rgba(245,124,0,0.15);color:var(--warning);}
 .status-closed{background:rgba(102,102,102,0.15);color:var(--text-light);}
 
-/* CM010 - Home Dashboard Specifics */
+/* CM011 - Home Dashboard Specifics */
 .hero-banner{background:linear-gradient(135deg,var(--primary),var(--primary-light));border-radius:16px;padding:25px 20px;color:#FFF;position:relative;overflow:hidden;box-shadow:var(--shadow-lg);margin-bottom:25px;}
 .hero-banner::after{content:'';position:absolute;top:-50%;right:-20%;width:200px;height:200px;background:radial-gradient(circle,rgba(255,255,255,0.2) 0%,transparent 70%);border-radius:50%;}
 .hero-title{font-size:24px;font-weight:900;margin-bottom:5px;position:relative;z-index:2;}
@@ -110,21 +116,21 @@ body{background-color:var(--bg);color:var(--text);font-size:14px;line-height:1.5
 .ticket-row{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--border);}
 .ticket-row:last-child{border-bottom:none;padding-bottom:0;}
 
-/* CM011 - Installations */
+/* CM012 - Installations */
 .install-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;border-bottom:2px dashed var(--border);padding-bottom:12px;}
 .install-title{font-size:18px;font-weight:800;color:var(--primary-dark);}
 .install-loc{font-size:13px;color:var(--text-light);display:flex;align-items:center;gap:6px;margin-top:6px;font-weight:600;}
 .install-loc svg{width:16px;height:16px;fill:var(--primary-light);}
 .install-details{font-size:14px;color:var(--text);line-height:1.7;font-weight:600;}
 
-/* CM012 - Store & Products */
+/* CM013 - Store & Products */
 .store-price{font-size:24px;font-weight:900;color:var(--primary);margin:12px 0;display:flex;align-items:center;gap:8px;}
 .store-price span{font-size:14px;color:var(--text-light);font-weight:600;}
 .store-features{list-style:none;margin-bottom:20px;background:var(--bg);padding:15px;border-radius:10px;}
 .store-features li{position:relative;padding-left:26px;font-size:14px;color:var(--text);margin-bottom:10px;font-weight:600;}
 .store-features li::before{content:"";position:absolute;left:0;top:2px;width:18px;height:18px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%237A1F3D'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");background-size:contain;}
 
-/* CM013 - Custom Calculator */
+/* CM014 - Custom Calculator */
 .calc-row{display:flex;justify-content:space-between;align-items:center;padding:15px 0;border-bottom:1px solid var(--border);}
 .qty-group{display:flex;align-items:center;background:var(--bg);border-radius:10px;border:2px solid var(--border);overflow:hidden;}
 .qty-btn{background:transparent;border:none;width:40px;height:40px;font-size:20px;font-weight:900;color:var(--primary);cursor:pointer;transition:background 0.2s;}
@@ -136,7 +142,7 @@ body{background-color:var(--bg);color:var(--text);font-size:14px;line-height:1.5
 .receipt-item{display:flex;justify-content:space-between;font-size:14px;margin-bottom:8px;font-weight:600;}
 .receipt-total{display:flex;justify-content:space-between;font-size:20px;font-weight:900;margin-top:15px;padding-top:15px;border-top:2px solid var(--gold);color:var(--primary-dark);}
 
-/* CM014 - Toast Messages */
+/* CM015 - Toast Messages */
 #toast-box{position:fixed;bottom:25px;left:50%;transform:translateX(-50%);z-index:9999;display:flex;flex-direction:column;gap:12px;width:92%;max-width:360px;pointer-events:none;}
 .toast-msg{background:rgba(89,19,42,0.95);color:#FFF;padding:16px 20px;border-radius:12px;font-size:14px;font-weight:700;box-shadow:var(--shadow-lg);text-align:center;animation:slideUp 0.4s cubic-bezier(0.175,0.885,0.32,1.275) forwards;backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,0.1);}
 @keyframes slideUp{from{opacity:0;transform:translateY(50px);}to{opacity:1;transform:translateY(0);}}
@@ -145,10 +151,21 @@ body{background-color:var(--bg);color:var(--text);font-size:14px;line-height:1.5
 </head>
 <body>
 
-<!-- CM015 - Toast Container -->
+<!-- CM016 - Toast Container -->
 <div id="toast-box"></div>
 
-<!-- CM016 - Login Screen -->
+<!-- CM017 - Install PWA Prompt -->
+<div id="install-screen">
+<div class="install-card">
+<img src="https://sri-veda-org.github.io/Sri/LOGO-CIRCLE.png" class="install-icon" alt="App Icon">
+<h2 class="font-black text-primary" style="font-size:22px;margin-bottom:10px;">Sri Marketing App</h2>
+<p style="font-size:14px;color:var(--text-light);margin-bottom:25px;line-height:1.6;font-weight:600;">Install our app on your phone for quick access, faster loading, and a better experience.</p>
+<button class="btn" style="margin-bottom:12px;" onclick="installApp()">Install Now</button>
+<button class="btn-outline" onclick="closeInstallPrompt()">Not Now</button>
+</div>
+</div>
+
+<!-- CM018 - Login Screen -->
 <div id="login-screen">
 <div class="login-card">
 <div class="logo-container">
@@ -168,10 +185,10 @@ body{background-color:var(--bg);color:var(--text);font-size:14px;line-height:1.5
 </div>
 </div>
 
-<!-- CM017 - App Dashboard Container -->
+<!-- CM019 - App Dashboard Container -->
 <div id="dashboard">
 
-<!-- CM018 - App Header -->
+<!-- CM020 - App Header -->
 <header class="app-header">
 <div class="header-left">
 <button class="menu-btn" onclick="toggleSidebar()">
@@ -182,7 +199,7 @@ body{background-color:var(--bg);color:var(--text);font-size:14px;line-height:1.5
 <img src="https://placehold.co/150x150/7A1F3D/ffffff?text=RR" alt="Profile" class="header-profile" onclick="navigate('view-company')">
 </header>
 
-<!-- CM019 - Sidebar Overlay & Drawer -->
+<!-- CM021 - Sidebar Overlay & Drawer -->
 <div id="sidebar-overlay" class="sidebar-overlay" onclick="toggleSidebar()"></div>
 <div id="sidebar" class="sidebar">
 <div class="sidebar-header">
@@ -220,10 +237,10 @@ body{background-color:var(--bg);color:var(--text);font-size:14px;line-height:1.5
 </div>
 </div>
 
-<!-- CM020 - Main Content Area -->
+<!-- CM022 - Main Content Area -->
 <main class="main-content">
 
-<!-- CM021 - View: Home Dashboard -->
+<!-- CM023 - View: Home Dashboard -->
 <div id="view-home" class="view-section active">
 <div class="hero-banner">
 <div class="hero-title">Welcome, Ramana</div>
@@ -276,7 +293,7 @@ body{background-color:var(--bg);color:var(--text);font-size:14px;line-height:1.5
 </div>
 </div>
 
-<!-- CM022 - View: Store (Packages) -->
+<!-- CM024 - View: Store (Packages) -->
 <div id="view-store" class="view-section">
 <h2 class="section-heading">Our Products</h2>
 <div class="pro-card">
@@ -308,7 +325,7 @@ body{background-color:var(--bg);color:var(--text);font-size:14px;line-height:1.5
 </div>
 </div>
 
-<!-- CM023 - View: Custom Calculator -->
+<!-- CM025 - View: Custom Calculator -->
 <div id="view-custom" class="view-section">
 <h2 class="section-heading">Custom Build Estimate</h2>
 <div class="pro-card">
@@ -341,7 +358,7 @@ body{background-color:var(--bg);color:var(--text);font-size:14px;line-height:1.5
 </div>
 </div>
 
-<!-- CM024 - View: Tickets -->
+<!-- CM026 - View: Tickets -->
 <div id="view-tickets" class="view-section">
 <h2 class="section-heading">Support Tickets</h2>
 <div class="pro-card">
@@ -364,7 +381,7 @@ body{background-color:var(--bg);color:var(--text);font-size:14px;line-height:1.5
 </div>
 </div>
 
-<!-- CM025 - View: Billing & Company & Contact -->
+<!-- CM027 - View: Billing & Company & Contact -->
 <div id="view-billing" class="view-section">
 <h2 class="section-heading">Invoices & Billing</h2>
 <div class="pro-card">
@@ -409,17 +426,24 @@ body{background-color:var(--bg);color:var(--text);font-size:14px;line-height:1.5
 
 <script>
 
-/* CM026 - State & Toast Logic */
+/* CM028 - PWA Install Logic */
+let deferredPrompt;
+window.addEventListener('beforeinstallprompt',(e)=>{e.preventDefault();deferredPrompt=e;document.getElementById('install-screen').style.display='flex';});
+function installApp(){document.getElementById('install-screen').style.display='none';if(deferredPrompt){deferredPrompt.prompt();deferredPrompt.userChoice.then((choiceResult)=>{if(choiceResult.outcome==='accepted'){console.log('User accepted the A2HS prompt');}else{console.log('User dismissed the A2HS prompt');}deferredPrompt=null;});}}
+function closeInstallPrompt(){document.getElementById('install-screen').style.display='none';}
+if('serviceWorker' in navigator){window.addEventListener('load',()=>{navigator.serviceWorker.register('sw.js').then(reg=>console.log('SW registered')).catch(err=>console.log('SW registration failed',err));});}
+
+/* CM029 - State & Toast Logic */
 function showToast(m){const b=document.getElementById('toast-box');const t=document.createElement('div');t.className='toast-msg';t.innerText=m;b.appendChild(t);setTimeout(()=>{t.style.animation='slideUp 0.4s reverse forwards';setTimeout(()=>t.remove(),400);},2500);}
 function processLogin(){const m=document.getElementById('login-mob').value;const p=document.getElementById('login-pin').value;if(m==='9876543210'&&p==='1234'){document.getElementById('login-screen').style.display='none';document.getElementById('dashboard').style.display='block';navigate('view-home');showToast('Secure Login Successful');}else{showToast('Invalid credentials. Use 9876543210 / 1234');}}
 function doLogout(){document.getElementById('dashboard').style.display='none';document.getElementById('login-screen').style.display='flex';document.getElementById('login-mob').value='';document.getElementById('login-pin').value='';toggleSidebar();showToast('Logged out securely');}
 
-/* CM027 - Navigation Logic */
+/* CM030 - Navigation Logic */
 function toggleSidebar(){document.getElementById('sidebar').classList.toggle('active');document.getElementById('sidebar-overlay').classList.toggle('active');}
 function navigate(id){document.querySelectorAll('.view-section').forEach(e=>e.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.menu-item').forEach(e=>e.classList.remove('active'));const m=document.getElementById('menu-'+id.replace('view-',''));if(m)m.classList.add('active');if(document.getElementById('sidebar').classList.contains('active'))toggleSidebar();window.scrollTo(0,0);}
 function submitGen(msg,view){showToast(msg);navigate(view);}
 
-/* CM028 - Calculator Logic */
+/* CM031 - Calculator Logic */
 let calc={d:2,b:2,s:0};
 function adjQty(t,v){const c=t==='dome'?'d':'b';if(calc[c]+v>=0){calc[c]+=v;document.getElementById('q-'+t).innerText=calc[c];renderCalc();}}
 function setStorage(v){calc.s=v;document.getElementById('rc-15').className='radio-chip'+(v===0?' selected':'');document.getElementById('rc-30').className='radio-chip'+(v===3500?' selected':'');renderCalc();}
